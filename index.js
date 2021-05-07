@@ -3,7 +3,7 @@ const path = require('path')
 const fs = require('fs')
 const { networkInterfaces } = require('os')
 
-const {ACCESS_IP_SUBSTR, PORT, UPDATE_INTERVAL} = require('./config')
+const {FOLDER, ACCESS_IP_SUBSTR, PORT, UPDATE_INTERVAL} = require('./config')
 
 const app = express()
 
@@ -21,12 +21,12 @@ app.use((req, res, next) => {
     
 })
 
-console.log(path.join(__dirname,'..','files_pdf'))
-app.use('/files_pdf', express.static(path.join(__dirname,'..','files_pdf')))
+console.log(path.resolve(FOLDER))
+app.use('/files_pdf', express.static(path.resolve(FOLDER)))
 
 app.get('/', (req, res, next) => {
     console.log(new Date(), 'перегляд списку документів з пристрою', req.ip)
-    fs.readdir(path.join(__dirname,'..','files_pdf'), (err, items) => {
+    fs.readdir(path.resolve(FOLDER), (err, items) => {
         const fileArray = items
             .filter( (item) => {
                 return path.extname(item).toLocaleLowerCase() === '.pdf'
@@ -37,7 +37,7 @@ app.get('/', (req, res, next) => {
 
 app.get('/json', (req, res, next) => {
 
-    fs.readdir(path.join(__dirname,'..','files_pdf'), (err, items) => {
+    fs.readdir(path.resolve(FOLDER), (err, items) => {
         const fileArray = items
             .filter( (item) => {
                 return path.extname(item).toLocaleLowerCase() === '.pdf'

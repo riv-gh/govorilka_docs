@@ -1,6 +1,6 @@
 {
   "name": "govorilka_docs",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "for hcj",
   "main": "index.js",
   "scripts": {
