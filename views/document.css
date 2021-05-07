@@ -1,0 +1,43 @@
+html,body {padding:0; margin:0}
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    font-family: system-ui;
+}
+#container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+#menu {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 45px;
+    padding: 0 15px;
+}
+#menu>span {
+    cursor: default;
+    font-weight: 600;
+}
+#menu>a, #menu>a:visited {
+    background-color: #005caa;
+    color: white;
+    padding: 1em 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#menu>a:hover {
+    background-color: #555;
+}
+#menu>a:active {
+    background-color: black;
+}
+
+#iframe {
+    width: 100%;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "govorilka_docs",
+  "version": "1.1.0",
+  "description": "for hcj",
+  "main": "index.js",
+  "scripts": {
+    "test": "title Gvorilka server TEST && nodemon index.js",
+    "start": "title Gvorilka server && node index.js"
+  },
+  "author": "daenur",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^3.0.2"
+  }
+}

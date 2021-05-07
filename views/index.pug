@@ -1,0 +1,24 @@
+mixin fileItem(fileName)
+    - var fileLink = "./document/" + fileName
+    - var name = fileName.replace(/\.pdf$/,'')
+    li
+        a(href=fileLink)= name
+
+doctype html
+html(lang="uk")
+    head 
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Cписок документів
+        meta(name="google" value="notranslate")
+        style
+            include index.css
+    body 
+        h1 Список документів
+        ul#filelist
+            each file in fileArray
+                +fileItem(file)
+        script= `const UPDATE_INTERVAL=${UPDATE_INTERVAL}`
+        script 
+            include index_script.js 

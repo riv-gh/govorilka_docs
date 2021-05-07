@@ -1,0 +1,19 @@
+- var link = "/files_pdf/"+file
+- var name = file.replace(/\.pdf$/,'')
+doctype html
+html(lang="uk")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title= file
+        meta(name="google" value="notranslate")
+        style
+            include document.css
+    body 
+        #menu 
+            span= name
+            a(href="/") Повернутися до списку
+        #container 
+            iframe#iframe(src=link)
+        
